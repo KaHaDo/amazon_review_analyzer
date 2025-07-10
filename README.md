@@ -1,23 +1,23 @@
-# amazon_review_analyser
+# amazon_review_analyzer
 
 ## Installation
 
 ### Clone the project
 
 ```
-git clone https://github.com/KaHaDo/amazon_review_analyser.git
+git clone https://github.com/KaHaDo/amazon_review_analyzer.git
 ```
 
 ### Create a new virtual environment 
 
 ```
-python3 -m venv ./amazon_review_analyser/.venv
+python3 -m venv ./amazon_review_analyzer/.venv
 ```
 
 ### Activate the environment
 
 ```
-source ./amazon_review_analyser/.venv/bin/activate
+source ./amazon_review_analyzer/.venv/bin/activate
 ```
 
 ### Install dependencies
