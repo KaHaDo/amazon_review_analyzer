@@ -30,8 +30,9 @@ pip install -r requirements.txt
 
 After installing the dependencies, you’ll need to update *two files*:
 
-•⁠  ⁠⁠ config.yaml ⁠
-•⁠  ⁠⁠ kaggle.json ⁠
+•⁠  ⁠⁠ config.yaml.example
+•⁠  ⁠⁠ kaggle.json.example
+
 ### Kaggle API Key
 
 The program requires a valid Kaggle API key to function.  
@@ -54,7 +55,7 @@ In ⁠ config.yaml ⁠, set:
     Define where processed files should be saved.  
     (Also relative to the project’s root directory.)
 
-After defining all variables the program can be started as follows:
+After defining all variables rename the files to config.yaml and kaggle.json. The program can be started as follows:
 
 
 python3 07_LDA_LSA.py
