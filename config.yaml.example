@@ -1,16 +1,17 @@
 KAGGLE_CONFIG_DIR: ""
 
-DATASET_NAME: ""
+DATASET_NAME: "rogate16/amazon-reviews-2018-full-dataset"
 
-DOWNLOAD_PATH: ""
+DOWNLOAD_PATH: "Data"
 
-FILE_PATH: ""
+FILE_PATH: "Data/amazon_reviews.csv"
 
-OUTPUT_PATH: ""
+OUTPUT_PATH: "Data/cleaned_amazon_reviews.csv"
 
-BOW_OUTPUT_PATH: ""
+BOW_OUTPUT_PATH: "Data/BoW_Matrix.csv"
 
-LDA_OUTPUT_PATH: ""
+LDA_OUTPUT_PATH: "Data/LDA_Topics_Export.csv"
 
-LSA_OUTPUT_PATH: ""
+LSA_OUTPUT_PATH: "Data/LSA_Topics_Export.csv"
 
+TFIDF_OUTPUT_PATH: "Data/TF-IDF_Matrix.csv" 
