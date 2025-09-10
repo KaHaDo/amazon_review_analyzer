@@ -49,5 +49,5 @@ In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE
 
 After defining all variables rename the Config-files to config.yaml and kaggle.json. The program can be started as follows:
 
-python3 07_LDA_LSA_optimized.py (final script amazon_review_analyzer.py - Final script will be renamed and uploaded after review)
+python3 amazon_review_analyzer.py analyzer.py
 
