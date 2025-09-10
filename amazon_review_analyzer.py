@@ -142,7 +142,7 @@ print(f'\nTF-IDF transformation completed! Matrix saved at: {tfidf_output_path}\
 # Latent Dirichlet Allocation (LDA)
 print('Starting Latent Dirichlet Allocation (this may take some time):')
 
-# Limit the number of topics to 25 to avoid runtime issues with LDA
+# Set number of topics to 25 as a practical compromise between performance and runtime
 num_topics = 25
 
 # Train the LDA model
@@ -172,7 +172,7 @@ print(f'\nLDA topics saved as CSV at: {lda_output_path}\n')
 # Starting Latent Semantic Analysis (LSA)
 print('Starting Latent Semantic Analysis (this may take some time):')
 
-# Limit the number of topics to 25 to avoid runtime issues with LSA
+# Set number of topics to 25 as a practical compromise between performance and runtime
 num_topics = 25
 
 # Train LSA model using Truncated SVD
