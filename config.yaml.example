@@ -1,4 +1,4 @@
-KAGGLE_CONFIG_DIR: ""
+KAGGLE_CONFIG_DIR: "<PATH TO KAGGLE.JSON-FILE>"
 
 DATASET_NAME: "rogate16/amazon-reviews-2018-full-dataset"
 
