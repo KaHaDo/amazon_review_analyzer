@@ -7,8 +7,7 @@ import re
 import nltk
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.decomposition import LatentDirichletAllocation
-from sklearn.decomposition import TruncatedSVD
+from sklearn.decomposition import LatentDirichletAllocation, TruncatedSVD
 
 # Load config file and global variables
 from config import load_config
@@ -116,7 +115,7 @@ df = pd.read_csv(output_path, na_filter=False)
 
 print(f"\nAfter loading in tf-idf test - Number of missing values in 'review_body': {df['review_body'].isna().sum()}")
 print(f'\nTotal number of rows: {len(df)}')
-w
+
 # tf-idf Vectorization
 tfidf_vectorizer = TfidfVectorizer(max_features=250)  # Limit to 250 words
 X_tfidf = tfidf_vectorizer.fit_transform(df['review_body'])
