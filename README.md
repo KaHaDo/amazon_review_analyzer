@@ -49,5 +49,4 @@ In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE
 
 After defining all variables rename the Config-files to config.yaml and kaggle.json. The program can be started as follows:
 
-python3 amazon_review_analyzer.py analyzer.py
-
+python3 amazon_review_analyzer.py
