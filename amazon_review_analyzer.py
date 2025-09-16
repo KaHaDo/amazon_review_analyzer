@@ -76,7 +76,7 @@ df.to_csv(output_path, index=False, encoding='utf-8')
 print(f'\nCleaned dataset saved at: {output_path}')
 
 # Starting bag-of-words (BoW) transformation
-print('\nStarting bag-of-words (BoW) transformation:')
+print('\nStarting Bag-of-Words (BoW) transformation:')
 
 # Load the cleaned file
 df = pd.read_csv(output_path, na_filter=False)
@@ -108,7 +108,7 @@ df_bow.to_csv(bow_output_path, index=False)
 print(f'\nBag-of-Words (BoW) transformation completed! Matrix saved at: {bow_output_path}')
 
 # Starting tf-idf transformation
-print('\nStarting tf-idf transformation:')
+print('\nStarting Term Frequency-Inverse Document Frequency (TF-IDF) transformation:')
 
 # Load the cleaned file
 df = pd.read_csv(output_path, na_filter=False)
@@ -137,7 +137,7 @@ df_tfidf = pd.DataFrame(X_tfidf.toarray(), columns=tfidf_vectorizer.get_feature_
 tfidf_output_path = config['TFIDF_OUTPUT_PATH']
 df_tfidf.to_csv(tfidf_output_path, index=False, float_format='%.6f')
 
-print(f'\nTF-IDF transformation completed! Matrix saved at: {tfidf_output_path}\n')
+print(f'\nTerm Frequency-Inverse Document Frequency (TF-IDF) transformation completed! Matrix saved at: {tfidf_output_path}\n')
 
 # Latent Dirichlet Allocation (LDA)
 print('Starting Latent Dirichlet Allocation (this may take some time):')
