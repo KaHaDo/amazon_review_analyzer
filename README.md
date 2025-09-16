@@ -31,21 +31,18 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Configuration Setup
+## Configuration Setup
 
-After installing the dependencies, you’ll need to update *two files*:
+After installing the dependencies, you need to set up the following files:
 
-•⁠  ⁠⁠ config.yaml.example
-•⁠  ⁠⁠ kaggle.json.example
+•⁠ `kaggle.json.example` – obtain your Kaggle API key from [Kaggle](https://www.kaggle.com/docs/api) and choose one of the following options:
 
-### Kaggle API Key
+  1. Copy the downloaded `kaggle.json` file directly into the project folder.
+  2. Or, open `kaggle.json.example`, paste the contents of the downloaded file, and rename it to `kaggle.json`.
 
-The program requires a valid Kaggle API key.  
-See the [Kaggle API documentation](https://www.kaggle.com/docs/api) for instructions on how to obtain one.
-
-In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE_CONFIG_DIR)
-
-•⁠  ⁠*⁠ KAGGLE_CONFIG_DIR ⁠* → The folder where ⁠ kaggle.json ⁠ is located.
+•⁠ `config.yaml.example` – modify as needed and rename to `config.yaml`.  
+  Set the variable **KAGGLE_CONFIG_DIR** to the folder where `kaggle.json` is located.  
+  All other variables can be left at their default values.
 
 ### Key Variables in ⁠config.yaml ⁠
 
@@ -60,7 +57,11 @@ In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE
     Define where processed files should be saved.  
     (Also relative to the project’s root directory.)
 
-After defining all variables rename the config files to config.yaml and kaggle.json.
+Make sure to rename the files after editing:
+•⁠ `config.yaml.example` → `config.yaml`
+•⁠ `kaggle.json.example` → `kaggle.json`
+
+The program will **not run** if the files are not renamed.
 
 ### Run the project
 
