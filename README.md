@@ -2,7 +2,7 @@
 
 ### Clone the project
 
-git clone https://github.com/KaHaDo/amazon_review_analyzer.git
+```bash git clone https://github.com/KaHaDo/amazon_review_analyzer.git```
 
 ### Create a new virtual environment 
 
@@ -27,7 +27,7 @@ After installing the dependencies, you’ll need to update *two files*:
 
 ### Kaggle API Key
 
-The program requires a valid Kaggle API key to function.  
+The program requires a valid Kaggle API key.  
 See the [Kaggle API documentation](https://www.kaggle.com/docs/api) for instructions on how to obtain one.
 
 In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE_CONFIG_DIR)
@@ -47,6 +47,8 @@ In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE
     Define where processed files should be saved.  
     (Also relative to the project’s root directory.)
 
-After defining all variables rename the Config-files to config.yaml and kaggle.json. The program can be started as follows:
+After defining all variables rename the config-files to config.yaml and kaggle.json.
+
+### Run the project
 
 python3 amazon_review_analyzer.py
