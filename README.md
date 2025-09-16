@@ -1,3 +1,7 @@
+# Amazon Review Analyzer
+
+A Python project to download, process, and analyze Amazon product reviews using machine learning models like LDA and LSA.
+
 ## Installation
 
 ### Clone the project
@@ -24,8 +28,6 @@ source .venv/bin/activate
 ```bash 
 pip install -r requirements.txt
 ```
-
-### Run the project
 
 ### Configuration Setup
 
