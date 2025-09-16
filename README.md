@@ -2,19 +2,28 @@
 
 ### Clone the project
 
-```bash git clone https://github.com/KaHaDo/amazon_review_analyzer.git```
+```bash 
+git clone https://github.com/KaHaDo/amazon_review_analyzer.git
+cd amazon_review_analyzer
+```
 
 ### Create a new virtual environment 
 
-python3 -m venv ./amazon_review_analyzer/.venv
+```bash 
+python3 -m venv .venv
+```
 
 ### Activate the environment
 
-source ./amazon_review_analyzer/.venv/bin/activate
+```bash 
+source .venv/bin/activate
+```
 
 ### Install dependencies
 
+```bash 
 pip install -r requirements.txt
+```
 
 ### Run the project
 
@@ -47,8 +56,10 @@ In ⁠ config.yaml ⁠, set (All variables can be left default except KAGGLE
     Define where processed files should be saved.  
     (Also relative to the project’s root directory.)
 
-After defining all variables rename the config-files to config.yaml and kaggle.json.
+After defining all variables rename the config files to config.yaml and kaggle.json.
 
 ### Run the project
 
+```bash 
 python3 amazon_review_analyzer.py
+```
