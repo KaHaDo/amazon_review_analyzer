@@ -40,7 +40,8 @@ After installing the dependencies, you need to set up the following files:
   1. Copy the downloaded `kaggle.json` file directly into the project folder.
   2. Or, open `kaggle.json.example`, paste the contents of the downloaded file, and rename it to `kaggle.json`.
 
-•⁠ `config.yaml.example` – modify as needed and rename to `config.yaml`.  
+•⁠ `config.yaml.example` – modify as needed and rename to `config.yaml`. 
+ 
   Set the variable **KAGGLE_CONFIG_DIR** to the folder where `kaggle.json` is located.  
   All other variables can be left at their default values.
 
