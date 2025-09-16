@@ -8,6 +8,8 @@ A Python project to download, process, and analyze Amazon product reviews using 
 
 ```bash 
 git clone https://github.com/KaHaDo/amazon_review_analyzer.git
+```
+```bash
 cd amazon_review_analyzer
 ```
 
