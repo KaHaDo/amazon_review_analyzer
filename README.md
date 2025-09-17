@@ -2,6 +2,15 @@
 
 A Python project to download, process, and analyze Amazon product reviews using machine learning models like LDA and LSA.
 
+## Requirements
+
+- **Python 3.12.x**  
+  The project is **not compatible** with Python 3.13 or newer.  
+  Please make sure to use Python 3.12.x.
+
+- Dependencies are defined in `requirements.txt`.  
+  It is strongly recommended to install them inside a virtual environment.
+
 ## Installation
 
 ### Clone the project
