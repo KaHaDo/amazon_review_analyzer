@@ -13,9 +13,3 @@ scikit-learn>=1.6,<2.0
 
 # Kaggle API
 kaggle>=1.6,<2.0
-
-# Utilities
-bleach>=6.2,<7.0
-certifi>=2025.1,<2026.0
-charset-normal
-
