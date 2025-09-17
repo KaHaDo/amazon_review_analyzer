@@ -10,6 +10,8 @@ OUTPUT_PATH: "Data/cleaned_amazon_reviews.csv"
 
 BOW_OUTPUT_PATH: "Data/BoW_Matrix.csv"
 
+PLOT_OUTPUT_PATH: "Data/coherence_plot.png"
+
 LDA_OUTPUT_PATH: "Data/LDA_Topics_Export.csv"
 
 LSA_OUTPUT_PATH: "Data/LSA_Topics_Export.csv"
