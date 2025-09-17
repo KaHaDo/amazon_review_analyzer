@@ -128,7 +128,6 @@ if __name__ == '__main__':
     print(f'\nTotal number of rows: {len(df)}')
 
     # Initialize CountVectorizer
-
     bow_vectorizer = CountVectorizer(max_features=5000, min_df=5, max_df=0.9)
 
     # Apply BoW vectorization to the reviews
@@ -145,8 +144,7 @@ if __name__ == '__main__':
     print('\nFirst 20 words from the vocabulary (Just to check): ' + ', '.join(filtered_vocabulary[:20]))
 
     # Coherence Score Calculation
-    print('\nStarting Coherence Score Calculation to find optimal number of topics (this may take some time):')
-    print()
+    print("\nStarting Coherence Score Calculation to find optimal number of topics (this may take some time):\n")
 
     # Prepare data for Gensim
     tokenized_texts = [review.split() for review in df['review_body'].dropna()]
@@ -187,8 +185,7 @@ if __name__ == '__main__':
     # Load the cleaned file
     df = pd.read_csv(output_path, na_filter=False)
 
-    print(
-        f"\nAfter loading in tf-idf test - Number of missing values in 'review_body': {df['review_body'].isna().sum()}")
+    print(f"\nAfter loading in tf-idf test - Number of missing values in 'review_body': {df['review_body'].isna().sum()}")
     print(f'\nTotal number of rows: {len(df)}')
 
     # tf-idf Vectorization
