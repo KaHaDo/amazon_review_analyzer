@@ -207,9 +207,6 @@ if __name__ == '__main__':
     # Latent Dirichlet Allocation (LDA)
     print(f'Starting Latent Dirichlet Allocation with k={optimal_num_topics} topics (This may take some time)')
 
-    # Set the number of topics to the optimal value found by the coherence score
-    #num_topics = optimal_num_topics
-
     # Train the LDA model
     # random_state=123 ensures reproducible results (same topics every run)
     lda_model = LatentDirichletAllocation(n_components=optimal_num_topics, random_state=123)
