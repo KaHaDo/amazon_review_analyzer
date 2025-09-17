@@ -1,16 +1,22 @@
-# Import modules
+# Standard libraries
 import os
-import subprocess
-import pandas as pd
-import numpy as np
 import re
+import subprocess
+
+# Data analysis and visualization
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Natural Language Processing (NLP)
 import nltk
 from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.decomposition import LatentDirichletAllocation, TruncatedSVD
-import matplotlib.pyplot as plt
-from gensim.models.coherencemodel import CoherenceModel
 from gensim.corpora import Dictionary
+from gensim.models.coherencemodel import CoherenceModel
+
+# Machine learning
+from sklearn.decomposition import LatentDirichletAllocation, TruncatedSVD
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 # Load config file and global variables
 from config import load_config
@@ -223,42 +229,44 @@ if __name__ == '__main__':
     df_lda_topics.to_csv(lda_output_path, index=False)
     print(f'\nLDA topics saved as CSV at: {lda_output_path}\n')
 
-# Starting Latent Semantic Analysis (LSA)
-print('Starting Latent Semantic Analysis (this may take some time):')
+    # Starting Latent Semantic Analysis (LSA)
+    print('Starting Latent Semantic Analysis (this may take some time):')
 
-# Train LSA model using Truncated SVD - Find optimal number of topics by using Scree Plot
-# random_state=123 ensures reproducible results (same topics every run)
-lsa_model = TruncatedSVD(n_components=100, random_state=123)
-lsa_model.fit(X_tfidf)
-explained_variance = lsa_model.explained_variance_ratio_
+    # Train LSA model using Truncated SVD - Find optimal number of topics by using Scree Plot
+    # random_state=123 ensures reproducible results (same topics every run)
+    lsa_model = TruncatedSVD(n_components=100, random_state=123)
+    lsa_model.fit(X_tfidf)
+    explained_variance = lsa_model.explained_variance_ratio_
 
-plt.figure(figsize=(12, 6))
-plt.plot(range(1, 101), explained_variance, marker='o', linestyle='--')
-plt.title('LSA Plot')
-plt.xlabel("Number of Topics (Components)")
-plt.ylabel("Explained Variance per Topic")
-plt.grid(True)
-lsa_plot_path = config['LSA_PLOT_PATH']
-plt.savefig(lsa_plot_path)
-print(f"\nLSA Scree Plot saved to: {lsa_plot_path}")
+    plt.figure(figsize=(12, 6))
+    plt.plot(range(1, 101), explained_variance, marker='o', linestyle='--')
+    plt.title('LSA Plot')
+    plt.xlabel("Number of Topics (Components)")
+    plt.ylabel("Explained Variance per Topic")
+    plt.grid(True)
+    lsa_plot_path = config['LSA_PLOT_PATH']
+    plt.savefig(lsa_plot_path)
+    print(f"\nLSA Scree Plot saved to: {lsa_plot_path}")
 
-# Set optimal number of topics based on the LSA Scree Plot
-optimal_num_topics_lsa = 30
+    # Set optimal number of topics based on the LSA Scree Plot
+    optimal_num_topics_lsa = 30
 
-print(f'\nTraining final LSA model with k={optimal_num_topics_lsa} topics (determined by Scree Plot)')
+    print(f'\nTraining final LSA model with k={optimal_num_topics_lsa} topics (determined by Scree Plot)')
 
-# Train a NEW, final LSA model with the optimal number of topics
-final_lsa_model = TruncatedSVD(n_components=optimal_num_topics_lsa, random_state=123)
-final_lsa_model.fit(X_tfidf)
+    # Train a NEW, final LSA model with the optimal number of topics
+    final_lsa_model = TruncatedSVD(n_components=optimal_num_topics_lsa, random_state=123)
+    final_lsa_model.fit(X_tfidf)
 
-# Extract topics from final model
-df_lsa_topics = get_topics(final_lsa_model, tfidf_vectorizer.get_feature_names_out(), 15)
+    # Extract topics from final model
+    df_lsa_topics = get_topics(final_lsa_model, tfidf_vectorizer.get_feature_names_out(), 15)
 
-# Print the topics as a formatted table
-print('\nExtracted topics from reviews using LSA:\n')
-print(df_lsa_topics.to_string(index=False))
+    # Print the topics as a formatted table
+    print('\nExtracted topics from reviews using LSA:\n')
+    print(df_lsa_topics.to_string(index=False))
 
-# Save the LSA topics as a CSV file
-lsa_output_path = config['LSA_OUTPUT_PATH']
-df_lsa_topics.to_csv(lsa_output_path, index=False)
-print(f'\nLSA topics saved as CSV at: {lsa_output_path}\n')
+    # Save the LSA topics as a CSV file
+    lsa_output_path = config['LSA_OUTPUT_PATH']
+    df_lsa_topics.to_csv(lsa_output_path, index=False)
+    print(f'\nLSA topics saved as CSV at: {lsa_output_path}\n')
+
+    print("\nProgram finished successfully\n")
