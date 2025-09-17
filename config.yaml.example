@@ -12,4 +12,6 @@ PLOT_OUTPUT_PATH: "Data/coherence_plot.png"
 
 LDA_OUTPUT_PATH: "Data/LDA_Topics_Export.csv"
 
+LSA_PLOT_PATH: "Data/lsa_plot.png"
+
 LSA_OUTPUT_PATH: "Data/LSA_Topics_Export.csv"
