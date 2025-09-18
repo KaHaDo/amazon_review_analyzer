@@ -171,12 +171,12 @@ if __name__ == '__main__':
     plt.savefig(plot_output_path)
     print(f"\nCoherence plot saved to: {plot_output_path}")
 
-    # Find the optimal number of topics
+    # Find the optimal number of topics for LDA
     best_score_index = np.argmax(coherence_values)
-    optimal_num_topics = x[best_score_index]
+    optimal_num_topics_lda = x[best_score_index]
     optimal_lda_model = model_list[best_score_index]
 
-    print(f'\nOptimal number of topics is k={optimal_num_topics} with a Coherence Score of {max(coherence_values):.4f}')
+    print(f'\nOptimal number of topics is k={optimal_num_topics_lda} with a Coherence Score of {max(coherence_values):.4f}')
     print('Coherence Score calculation completed!\n')
 
     # Starting tf-idf transformation
@@ -205,11 +205,11 @@ if __name__ == '__main__':
     print(f' - Average tf-idf value: {np.mean(X_tfidf):.3f}\n')
 
     # Latent Dirichlet Allocation (LDA)
-    print(f'Starting Latent Dirichlet Allocation with k={optimal_num_topics} topics (This may take some time)')
+    print(f'Starting Latent Dirichlet Allocation with k={optimal_num_topics_lda} topics (This may take some time)')
 
     # Train the LDA model
     # random_state=123 ensures reproducible results (same topics every run)
-    lda_model = LatentDirichletAllocation(n_components=optimal_num_topics, random_state=123)
+    lda_model = LatentDirichletAllocation(n_components=optimal_num_topics_lda, random_state=123)
     lda_topics = lda_model.fit_transform(X_bow)  # X_bow is the BoW matrix
 
     df_lda_topics = get_topics(lda_model, bow_vectorizer.get_feature_names_out(), 15)
